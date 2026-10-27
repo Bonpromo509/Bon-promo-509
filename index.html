@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ht">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#123c2f">
+<meta name="description" content="Bon Promo 509 — dekouvri bon afè ak pwodwi enteresan.">
+<link rel="manifest" href="manifest.json">
+<title>Bon Promo 509</title>
+<style>
+:root{--green:#123c2f;--green2:#1e5945;--cream:#f8f5ec;--ink:#18231e;--muted:#66736b;--line:#e6e5dc;--white:#fff}
+*{box-sizing:border-box} body{margin:0;background:var(--cream);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{background:var(--green);color:white;padding:20px 18px 22px;border-radius:0 0 24px 24px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-size:22px;font-weight:850;letter-spacing:-.6px}.brand span{color:#e8dcb9}.tag{font-size:12px;color:#d9e8df;margin-top:3px}
+.pill{border:1px solid #6e9383;border-radius:99px;padding:7px 10px;font-size:12px;color:#e8f0eb}
+.search{margin-top:18px;display:flex;background:white;border-radius:13px;padding:0 12px;align-items:center;gap:8px}
+.search input{border:0;outline:0;width:100%;padding:14px 0;font-size:15px;color:var(--ink);background:transparent}
+main{max-width:760px;margin:auto;padding:18px 16px 96px}
+h1{font-size:23px;letter-spacing:-.5px;margin:5px 0 5px}.sub{color:var(--muted);font-size:14px;margin:0 0 17px}
+.categories{display:flex;gap:8px;overflow:auto;padding:2px 0 12px;scrollbar-width:none}.categories button{white-space:nowrap;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:99px;padding:9px 13px;font-size:13px}.categories button.active{background:var(--green);color:white;border-color:var(--green)}
+.sectionhead{display:flex;justify-content:space-between;align-items:center;margin:10px 0 12px}.sectionhead h2{font-size:18px;margin:0}.count{font-size:12px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.card{background:white;border:1px solid var(--line);border-radius:17px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.art{height:122px;display:grid;place-items:center;background:linear-gradient(135deg,#e8e2d0,#d4e2d7);font-size:47px;position:relative}
+.art .label{position:absolute;top:9px;left:9px;background:var(--green);color:white;font-size:10px;font-weight:750;padding:5px 7px;border-radius:6px}
+.info{padding:12px;display:flex;flex-direction:column;flex:1}.category{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}.name{font-size:15px;font-weight:750;margin:5px 0 6px;line-height:1.25}.desc{font-size:12px;color:var(--muted);line-height:1.4;margin:0 0 10px;flex:1}
+.price{font-size:17px;font-weight:850;color:var(--green)}.old{font-size:11px;color:#7b847e;text-decoration:line-through;margin-left:5px}
+.actions{display:flex;gap:7px;margin-top:11px}.btn{border:0;border-radius:10px;padding:10px 9px;font-size:12px;font-weight:750;cursor:pointer}.primary{background:var(--green);color:white;flex:1}.save{background:#f0f2ed;color:var(--green);min-width:39px}
+.notice{margin-top:17px;background:#eee8d8;border:1px solid #e3dac4;border-radius:13px;padding:12px 13px;font-size:12px;color:#4d5146;line-height:1.5}
+.empty{display:none;text-align:center;padding:35px 10px;color:var(--muted)}
+nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:center;z-index:4;padding:8px 10px calc(8px + env(safe-area-inset-bottom))}
+.navinner{width:100%;max-width:760px;display:flex;justify-content:space-around}.navbtn{background:none;border:0;color:var(--muted);font-size:11px;padding:5px 12px;display:grid;gap:3px;justify-items:center}.navbtn strong{font-size:19px;font-weight:500}.navbtn.active{color:var(--green);font-weight:800}
+footer{font-size:11px;text-align:center;color:var(--muted);padding:20px 8px 4px}
+.modal{position:fixed;inset:0;background:#0008;display:none;align-items:end;justify-content:center;z-index:8}.modal.show{display:flex}.sheet{background:white;border-radius:22px 22px 0 0;width:100%;max-width:600px;padding:22px 20px calc(25px + env(safe-area-inset-bottom));max-height:85vh;overflow:auto}.sheet h2{margin:0 0 8px}.sheet p{line-height:1.55;color:var(--muted);font-size:14px}.close{float:right;border:0;background:#eef0eb;border-radius:50%;width:32px;height:32px;font-size:18px}
+@media(min-width:620px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.art{height:145px}header{padding-left:max(18px,calc((100% - 728px)/2));padding-right:max(18px,calc((100% - 728px)/2))}}
+</style>
+</head>
+<body>
+<header>
+ <div class="top"><div><div class="brand">Bon Promo <span>509</span></div><div class="tag">Bon afè. Bon chwa. Chak jou.</div></div><div class="pill">Vèsyon tès</div></div>
+ <div class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Chèche pwodwi oswa kategori..." aria-label="Chèche pwodwi"></div>
+</header>
+<main>
+ <h1>Jwenn bon afè yo</h1>
+ <p class="sub">Dekouvri pwodwi ki ka itil ou, san pèdi tan.</p>
+ <div class="categories" id="categories">
+  <button class="active" data-cat="Tout">Tout</button><button data-cat="Teknoloji">Teknoloji</button><button data-cat="Kay">Kay</button><button data-cat="Mòd">Mòd</button><button data-cat="Akseswa">Akseswa</button>
+ </div>
+ <div class="sectionhead"><h2 id="listTitle">Bon afè pou dekouvri</h2><span class="count" id="count"></span></div>
+ <div class="grid" id="grid"></div><div class="empty" id="empty">Nou pa jwenn pwodwi sa a. Eseye yon lòt rechèch.</div>
+ <div class="notice"><b>Enpòtan:</b> Sa a se yon demo. Pri, rabè ak lyen ki parèt nan vèsyon sa a se egzanp pou teste konsepsyon an, se pa òf reyèl. Verifye tout enfòmasyon yo anvan ou pibliye app la.</div>
+ <footer>Bon Promo 509 · Demo pou tès · Nou pa vann pwodwi dirèkteman.</footer>
+</main>
+<nav><div class="navinner"><button class="navbtn active" id="homeBtn"><strong>⌂</strong>Akèy</button><button class="navbtn" id="savedBtn"><strong>♡</strong>Favori <span id="savedCount"></span></button><button class="navbtn" id="aboutBtn"><strong>ⓘ</strong>Sou nou</button></div></nav>
+<div class="modal" id="modal" role="dialog" aria-modal="true"><div class="sheet"><button class="close" id="closeModal" aria-label="Fèmen">×</button><div id="modalContent"></div></div></div>
+<script>
+const products=[
+{id:1,name:"Ekoutè san fil",cat:"Teknoloji",emoji:"🎧",price:"Egzanp: $24.99",old:"$39.99",label:"Popilè",desc:"Pou mizik, apèl ak deplasman.",link:""},
+{id:2,name:"Lanp biwo LED",cat:"Kay",emoji:"💡",price:"Egzanp: $18.00",old:"$27.00",label:"Pou kay",desc:"Limyè pou lekti oswa travay.",link:""},
+{id:3,name:"Sak chak jou",cat:"Mòd",emoji:"👜",price:"Egzanp: $22.50",old:"$35.00",label:"Style",desc:"Yon sak pratik pou chak jou.",link:""},
+{id:4,name:"Sipò telefòn",cat:"Akseswa",emoji:"📱",price:"Egzanp: $9.99",old:"$14.99",label:"Ti pri",desc:"Pou kenbe telefòn nan sou biwo.",link:""},
+{id:5,name:"Boutèy dlo",cat:"Kay",emoji:"🥤",price:"Egzanp: $12.00",old:"$18.00",label:"Chwa itil",desc:"Pou pote dlo pandan jounen an.",link:""},
+{id:6,name:"Chajè pòtab",cat:"Teknoloji",emoji:"🔋",price:"Egzanp: $19.99",old:"$29.99",label:"Vwayaj",desc:"Yon sous kouran pou telefòn.",link:""}
+];
+let activeCat="Tout",saved=new Set(),showSaved=false;
+const grid=document.getElementById("grid"),search=document.getElementById("search");
+function render(){
+ const q=search.value.trim().toLowerCase();
+ const items=products.filter(p=>(activeCat==="Tout"||p.cat===activeCat)&&(!showSaved||saved.has(p.id))&&(`${p.name} ${p.cat} ${p.desc}`.toLowerCase().includes(q)));
+ grid.innerHTML=items.map(p=>`<article class="card"><div class="art"><span class="label">${p.label}</span><span>${p.emoji}</span></div><div class="info"><div class="category">${p.cat}</div><div class="name">${p.name}</div><p class="desc">${p.desc}</p><div><span class="price">${p.price}</span> <span class="old">${p.old}</span></div><div class="actions"><button class="btn primary" onclick="details(${p.id})">Gade detay</button><button class="btn save" aria-label="Ajoute nan favori" onclick="toggleSave(${p.id})">${saved.has(p.id)?"♥":"♡"}</button></div></div></article>`).join("");
+ document.getElementById("count").textContent=`${items.length} pwodwi`;
+ document.getElementById("empty").style.display=items.length?"none":"block";
+ document.getElementById("savedCount").textContent=saved.size?`(${saved.size})`:"";
+ document.getElementById("listTitle").textContent=showSaved?"Pwodwi favori ou yo":"Bon afè pou dekouvri";
+}
+function toggleSave(id){saved.has(id)?saved.delete(id):saved.add(id);render()}
+function details(id){
+ const p=products.find(x=>x.id===id);
+ document.getElementById("modalContent").innerHTML=`<div style="font-size:48px;margin:12px 0">${p.emoji}</div><div class="category">${p.cat}</div><h2>${p.name}</h2><p>${p.desc}</p><p><b>${p.price}</b> <span style="text-decoration:line-through">${p.old}</span></p><p>Nan vèsyon reyèl la, bouton sa a ap mennen sou sit vandè a atravè yon lyen verifye. Pa mete lyen afilye jiskaske ou enskri epi jwenn apwobasyon pwogram nan.</p><button class="btn primary" style="width:100%;padding:13px" onclick="alert('Demo sèlman: mete lyen pwodwi verifye anvan lansman.')">Ale sou sit vandè a (demo)</button>`;
+ document.getElementById("modal").classList.add("show");
+}
+document.getElementById("categories").addEventListener("click",e=>{if(e.target.tagName==="BUTTON"){activeCat=e.target.dataset.cat;document.querySelectorAll(".categories button").forEach(b=>b.classList.toggle("active",b===e.target));render()}});
+search.addEventListener("input",render);
+document.getElementById("savedBtn").onclick=()=>{showSaved=true;document.getElementById("savedBtn").classList.add("active");document.getElementById("homeBtn").classList.remove("active");render()};
+document.getElementById("homeBtn").onclick=()=>{showSaved=false;document.getElementById("homeBtn").classList.add("active");document.getElementById("savedBtn").classList.remove("active");render()};
+document.getElementById("aboutBtn").onclick=()=>{document.getElementById("modalContent").innerHTML="<h2>Sou Bon Promo 509</h2><p>Bon Promo 509 ede moun dekouvri pwodwi ak bon afè. Nou pral verifye pri, lyen ak kondisyon anvan nou pibliye okenn òf.</p><p><b>Transparans:</b> Si app la resevwa komisyon sou acha, n ap mete yon avi klè bò kote lyen an.</p><p>Kontak: ajoute imèl biznis ou anvan lansman.</p>";document.getElementById("modal").classList.add("show")};
+document.getElementById("closeModal").onclick=()=>document.getElementById("modal").classList.remove("show");
+document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")e.currentTarget.classList.remove("show")});
+render();
+if("serviceWorker" in navigator && location.protocol.startsWith("http")) navigator.serviceWorker.register("sw.js").catch(()=>{});
+</script>
+</body>
+</html>

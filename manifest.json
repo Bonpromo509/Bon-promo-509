@@ -1,0 +1,10 @@
+{
+  "name": "Bon Promo 509",
+  "short_name": "Bon Promo 509",
+  "description": "Dekouvri bon afè ak pwodwi enteresan.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f8f5ec",
+  "theme_color": "#123c2f",
+  "icons": []
+}
